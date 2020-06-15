@@ -1,0 +1,4 @@
+apiVersion: v1
+description: The Gloo App for Jenkins X
+name: jx-app-gloo
+version: 0.1.0-SNAPSHOT
