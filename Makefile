@@ -24,7 +24,7 @@ upgrade: clean build
 	helm upgrade ${NAME} ${NAME}
 
 delete:
-	helm delete --purge ${NAME} ${NAME}
+	helm delete --purge ${NAME}
 
 clean:
 	rm -rf ${NAME}/charts

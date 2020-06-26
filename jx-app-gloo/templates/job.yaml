@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    release: jenkins-x
+  name: {{ .Values.job.name | default "gloo-job" }}
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  backoffLimit: 5
+  completions: 1
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        release: jenkins-x
+    spec:
+      containers:
+      - args:
+        - install
+        - knative
+        command:
+        - glooctl
+        image: "{{ .Values.image.repository }}:{{ .Chart.Version }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: job
+      restartPolicy: Never
+      serviceAccountName: {{ .Values.serviceAccount.name | default "gloo-job" }}

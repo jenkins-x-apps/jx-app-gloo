@@ -1,6 +1,6 @@
 apiVersion: jenkins.io/v1
 kind: App
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "jx-app.fullname" . }}
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    {{- include "jx-app.labels" . | nindent 4 }}
