@@ -1,6 +1,7 @@
 approvers:
 - rawlingsj
 - jstrachan
+- nodece
 - garethjevans
 - MarckK
 - cagiti
@@ -8,6 +9,7 @@ approvers:
 reviewers:
 - rawlingsj
 - jstrachan
+- nodece
 - garethjevans
 - MarckK
 - cagiti
