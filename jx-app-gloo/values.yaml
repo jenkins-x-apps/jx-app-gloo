@@ -2,8 +2,9 @@ job:
   name: "gloo-boot"
 
 image:
+  # The best way is set pullPolicy is IfNotPresent.
   repository: docker.io/nodece/jx-glooctl
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 serviceAccount:
   # Annotations to add to the service account
